@@ -32,6 +32,12 @@ export const experience = {
   impact: 'El sistema aporta impacto funcional y organizacional: centraliza la información, automatiza tareas repetitivas y ofrece visibilidad en tiempo real sobre el estado de los procesos, apoyando la toma de decisiones con datos confiables.',
 }
 
+/**
+ * Estructura de evidencia por proyecto.
+ * - images: array de { src, alt } para capturas del sistema.
+ * - videoUrl: opcional, URL de YouTube, Vimeo o video directo.
+ * - resultados: array de strings (bullets orientados a negocio).
+ */
 export const projects = [
   {
     id: 'montero-sports',
@@ -41,6 +47,18 @@ export const projects = [
     stack: ['Laravel', 'PHP', 'MySQL', 'React'],
     featured: true,
     realClient: true,
+    images: [
+      { src: '/evidence/montero-sports/01.jpg', alt: 'Dashboard principal del gimnasio' },
+      { src: '/evidence/montero-sports/02.jpg', alt: 'Gestión de membresías' },
+      { src: '/evidence/montero-sports/03.jpg', alt: 'Control de acceso y asistencia' },
+    ],
+    videoUrl: '',
+    resultados: [
+      'Centralización de la información de socios y pagos.',
+      'Control de acceso y registro de asistencia en un solo sistema.',
+      'Reducción de errores manuales en cobros y vencimientos.',
+      'Reportes claros para la toma de decisiones del negocio.',
+    ],
   },
   {
     id: 'piscicola',
@@ -50,6 +68,18 @@ export const projects = [
     stack: ['Laravel', 'PHP', 'MySQL', 'React', 'Git'],
     featured: true,
     realClient: true,
+    images: [
+      { src: '/evidence/piscicola/01.jpg', alt: 'Vista general del sistema piscícola' },
+      { src: '/evidence/piscicola/02.jpg', alt: 'Módulos administrativos' },
+      { src: '/evidence/piscicola/03.jpg', alt: 'Reportes y alertas' },
+    ],
+    videoUrl: '',
+    resultados: [
+      'Centralización de la información operativa.',
+      'Trazabilidad de procesos y datos en tiempo real.',
+      'Alertas automáticas para seguimiento operativo.',
+      'Menos tiempo en tareas repetitivas y reportes manuales.',
+    ],
   },
   {
     id: 'sga-almuerzos',
@@ -59,6 +89,18 @@ export const projects = [
     stack: ['Laravel', 'PHP', 'MySQL', 'Blade', 'Biometría'],
     featured: false,
     realClient: true,
+    images: [
+      { src: '/evidence/sga-almuerzos/01.jpg', alt: 'Registro biométrico de almuerzos' },
+      { src: '/evidence/sga-almuerzos/02.jpg', alt: 'Panel por roles' },
+      { src: '/evidence/sga-almuerzos/03.jpg', alt: 'Reportes y gestión contable' },
+    ],
+    videoUrl: '',
+    resultados: [
+      'Validación más rápida en recepción con biometría.',
+      'Reducción de errores y filas del sistema manual.',
+      'Mejor control de pagos y asistencia por rol.',
+      'Reportes automáticos para la institución.',
+    ],
   },
   {
     id: 'crud-usuarios',
@@ -68,6 +110,16 @@ export const projects = [
     stack: ['Laravel', 'PHP', 'MySQL', 'Blade'],
     featured: false,
     realClient: false,
+    images: [
+      { src: '/evidence/crud-usuarios/01.jpg', alt: 'Listado de usuarios' },
+      { src: '/evidence/crud-usuarios/02.jpg', alt: 'Formulario de edición' },
+    ],
+    videoUrl: '',
+    resultados: [
+      'Gestión centralizada de usuarios y perfiles.',
+      'Validaciones y búsqueda para operación ágil.',
+      'Base reutilizable para sistemas más grandes.',
+    ],
   },
   {
     id: 'panel-admin',
@@ -77,6 +129,15 @@ export const projects = [
     stack: ['Laravel', 'PHP', 'MySQL', 'Bootstrap'],
     featured: false,
     realClient: false,
+    images: [
+      { src: '/evidence/panel-admin/01.jpg', alt: 'Login y dashboard' },
+      { src: '/evidence/panel-admin/02.jpg', alt: 'Vista protegida por roles' },
+    ],
+    videoUrl: '',
+    resultados: [
+      'Acceso seguro con roles y recuperación de contraseña.',
+      'Base lista para extender con módulos de negocio.',
+    ],
   },
 ]
 

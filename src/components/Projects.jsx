@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { projects } from '../data/content'
+import ProjectEvidenceModal from './ProjectEvidenceModal'
 import './Projects.css'
 
 export default function Projects() {
   const ref = useRef(null)
+  const [evidenceProject, setEvidenceProject] = useState(null)
 
   useEffect(() => {
     const el = ref.current
@@ -43,6 +45,13 @@ export default function Projects() {
               <h3 className="projects__title">{project.title}</h3>
               <p className="projects__subtitle">{project.subtitle}</p>
               <p className="projects__description">{project.description}</p>
+              <button
+                type="button"
+                className="projects__evidence-btn"
+                onClick={() => setEvidenceProject(project)}
+              >
+                Ver evidencia
+              </button>
               <ul className="projects__stack">
                 {project.stack.map((tech) => (
                   <li key={tech} className="projects__stack-item">
@@ -54,6 +63,12 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      {evidenceProject && (
+        <ProjectEvidenceModal
+          project={evidenceProject}
+          onClose={() => setEvidenceProject(null)}
+        />
+      )}
     </section>
   )
 }
