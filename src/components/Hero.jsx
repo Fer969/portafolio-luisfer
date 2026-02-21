@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { hero } from '../data/content'
+import { hero, contact } from '../data/content'
 import './Hero.css'
 
 export default function Hero() {
@@ -44,6 +44,17 @@ export default function Hero() {
           <a href="#proyectos" className="hero__cta hero__cta--secondary">
             Ver proyectos
           </a>
+          {contact.cvUrl && (
+            <a
+              href={contact.cvUrl}
+              className="hero__cta hero__cta--secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Descargar CV
+            </a>
+          )}
         </div>
       </div>
     </section>

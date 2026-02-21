@@ -153,4 +153,5 @@ export const contact = {
   email: 'luisferfuentesmontoya@gmail.com',
   linkedin: 'https://www.linkedin.com/in/luisferfuentesmontoya202506',
   github: 'https://github.com/Fer969',
+  cvUrl: '/cv/Luisfer-Montoya-HojaVida-2026.pdf',
 }
