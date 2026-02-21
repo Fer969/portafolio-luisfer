@@ -34,6 +34,38 @@
   display: block;
 }
 
+.evidence-carousel__fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  padding: 1rem;
+  text-align: center;
+}
+
+.evidence-carousel__fallback-icon {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.evidence-carousel__fallback-text {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.evidence-carousel__fallback-hint {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
 .evidence-carousel__btn {
   position: absolute;
   top: 50%;

@@ -93,6 +93,7 @@ export default function ProjectEvidenceModal({ project, onClose }) {
                   <video
                     src={videoEmbed.embedUrl}
                     controls
+                    muted
                     className="evidence-modal__video"
                     preload="metadata"
                   >

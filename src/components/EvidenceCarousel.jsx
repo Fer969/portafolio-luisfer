@@ -7,7 +7,12 @@ import './EvidenceCarousel.css'
  */
 export default function EvidenceCarousel({ images = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [failedIndices, setFailedIndices] = useState(() => new Set())
   const length = images.length
+
+  const markFailed = useCallback((index) => {
+    setFailedIndices((prev) => new Set(prev).add(index))
+  }, [])
 
   const goTo = useCallback(
     (index) => {
@@ -36,17 +41,22 @@ export default function EvidenceCarousel({ images = [] }) {
             data-active={i === currentIndex}
             aria-hidden={i !== currentIndex}
           >
-            <img
-              src={img.src}
-              alt={img.alt || `Captura ${i + 1}`}
-              loading="lazy"
-              decoding="async"
-              className="evidence-carousel__image"
-              onError={(e) => {
-                e.target.style.background = 'var(--bg-tertiary)'
-                e.target.alt = 'Imagen no disponible'
-              }}
-            />
+            {failedIndices.has(i) ? (
+              <div className="evidence-carousel__fallback">
+                <span className="evidence-carousel__fallback-icon" aria-hidden>🖼</span>
+                <span className="evidence-carousel__fallback-text">Captura no cargada</span>
+                <span className="evidence-carousel__fallback-hint">Añade la imagen en public/evidence/</span>
+              </div>
+            ) : (
+              <img
+                src={img.src}
+                alt={img.alt || `Captura ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                className="evidence-carousel__image"
+                onError={() => markFailed(i)}
+              />
+            )}
           </div>
         ))}
       </div>
