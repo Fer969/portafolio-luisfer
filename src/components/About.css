@@ -1,0 +1,30 @@
+.about {
+  padding: var(--section-padding) 1.5rem;
+  background: var(--bg-secondary);
+}
+
+.about__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about__heading {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about__text {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 65ch;
+}
