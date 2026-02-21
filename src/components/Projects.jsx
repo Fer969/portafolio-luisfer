@@ -36,7 +36,10 @@ export default function Projects() {
               key={project.id}
               className={`projects__card ${project.featured ? 'projects__card--featured' : ''} reveal`}
             >
-              {project.featured && <span className="projects__badge">Principal</span>}
+              <div className="projects__badges">
+                {project.featured && <span className="projects__badge">Principal</span>}
+                {project.realClient && <span className="projects__badge projects__badge--real">Implementado en negocio real</span>}
+              </div>
               <h3 className="projects__title">{project.title}</h3>
               <p className="projects__subtitle">{project.subtitle}</p>
               <p className="projects__description">{project.description}</p>
